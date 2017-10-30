@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- fix broken tilt laser -->
+
+  <!-- tuck arms after start -->
+  <include file="$(find morse_hanp_bridge)/launch/map_optitrack_transform.launch"/>
+
+  <node pkg="morse_hanp_bridge" type="morse_hanp_bridge_node" name="morse_hanp_bridge"/>
+  <!-- rosbridge -->
+  <!--<include file="$(find laas_navigation)/pr2_launch/rosbridge.launch"/>-->
+</launch>
