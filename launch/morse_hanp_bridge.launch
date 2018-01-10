@@ -5,7 +5,11 @@
   <!-- tuck arms after start -->
   <include file="$(find morse_hanp_bridge)/launch/map_optitrack_transform.launch"/>
 
-  <node pkg="morse_hanp_bridge" type="morse_hanp_bridge_node" name="morse_hanp_bridge"/>
+  <node pkg="morse_hanp_bridge" type="morse_hanp_bridge_node" name="morse_hanp_bridge" output="screen">
+	  <remap from="/tracked_human_pose_markers" to="/human_pose_prediction/human_markers" />
+  </node>
+
+
   <!-- rosbridge -->
   <!--<include file="$(find laas_navigation)/pr2_launch/rosbridge.launch"/>-->
 </launch>
